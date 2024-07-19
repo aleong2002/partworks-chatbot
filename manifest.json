@@ -1,0 +1,35 @@
+
+{
+  "manifest_version": 3,
+  "name": "case study",
+  "description": "instalily case study extension",
+  "version": "1.0",
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "Click to open panel"
+  },
+  "side_panel": {
+    "default_path": "public/index.html",
+    "openPanelOnActionClick": true
+  },
+  "chrome_url_overrides": {
+    "newtab": "public/index.html"
+  } ,
+  "offline_enabled": true,
+  "permissions": ["contextMenus", "storage", "sidePanel", "tabs", "activeTab"],
+  "host_permissions": [
+    "http://localhost/*",
+    "https://www.partselect.com/*"
+
+  ],
+  "commands": {
+    "_execute_action": {
+      "suggested_key": {
+        "default": "Ctrl+B",
+        "mac": "Command+B"
+      }
+    }
+  }
+}
